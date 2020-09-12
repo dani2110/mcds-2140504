@@ -34,5 +34,8 @@ class UserSeeder extends Seeder
         $usr->password   =bcrypt('customer');
         $usr->save();
 
+        //Factory
+        factory(User::class, 100)->create();
+
     }
 }
