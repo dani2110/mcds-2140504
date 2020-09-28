@@ -32,15 +32,40 @@ Route::get('user/{id}', function ($id){
 });
 
 
+Route::get('ages', function () {
+	$users = App\User::all()->take(10);
+	foreach ($users as $user)
+	{
+		$edad = Carbon::parse($user->birthdate)->age;
+		$tiempoTranscurridoCreacion = new Carbon($user->created_at);
+		$tiempoTranscurridoCreacion->setLocale('es');
+		$tiempo = $tiempoTranscurridoCreacion->diffForHumans();
+		echo($user->fullname.' tiene '.$edad.' años,'.' usuario creado '.$tiempo);
+	}
+});
+
+
 Route::get('challenge', function () {
 
-foreach (App\User::all()->take(10) as $user) {
-   $years = Carbon::createFromDate($user->birthdate)->diff()->format('%y years old');
-   $since = Carbon::parse($user->created_at);
-   $rs[] = $user->fullname." - ".$years." - created ".$since->diffForHumans();
- }
-    return view('challenge', ['rs' => $rs]);
+	foreach (App\User::all()->take(10) as $user) {
+		$years = Carbon::createFromDate($user->birthdate)->diff()->format('%y years old');
+		$since = Carbon::parse($user->created_at);
+		$rs[] = $user->fullname." - ".$years." - created ".$since->diffForHumans();
+	}
+	return view('challenge', ['rs' => $rs]);
 });
+
+Route::get('example', function () {
+	$games      = App\Game::all()->take(2);
+	$categories = App\Category::all()->take(3);
+	$users      = App\User::all()->take(10);
+	return view('example')
+	            ->with('games', $games)
+	            ->with('categories', $categories)
+	            ->with('users', $users);
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
