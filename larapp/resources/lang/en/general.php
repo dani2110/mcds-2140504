@@ -1,27 +1,31 @@
 <?php
-
 return [
-
- 'link-login'     => 'Login',
- 'link-register' => 'Register',
- 'link-en' => 'English',
- 'link-es' => 'Spanish',
- 'link-Login' => 'Login',
- 'link-E-Mail Address' => 'E-Mail Address',
- 'link-Password' => 'Password',
- 'link-Remember Me' => 'Remember Me',
- 'link-Login' => 'Login',
- 'link-Register' => 'Register',
- 'link-Fullname'=> 'Fullname',
- 'link-Email' => 'Email',
- 'link-Phone' => 'Phone',
- 'link-Birthdate' => 'Birthdate',
- 'link-Gender' => 'Gender',
- 'link-Address' => 'Address',
- 'link-Password' => 'Password',
- 'link-Role' => 'Role',
- 'link-Register' => 'Register',
- 'link-Forgot Your Password?' => 'Forgot Your Password?',
-
+	// Login Page
+    'link-login'     => 'Login',
+    'link-register'  => 'Register',
+    'title-login'    => 'Form Login',
+    'label-email'    => 'E-Mail Address',
+    'label-password' => 'Password',
+    'label-remember' => 'Remember Me',
+    'btn-login'      => 'Login',
+    'link-forgot'	 => 'Forgot Your Password?',
+    // Register Page
+    'title-register'  => 'Register',
+    'label-fullname'  => 'FullName',
+    'label-phone'     => 'PhoneNumber',
+    'label-birthdate' => 'BirthDate',
+    'label-gender'    => 'Gender',
+    'select-value'    => 'Select...',
+    'select-female'   => 'Female',
+    'select-male'     => 'Male',
+    'label-address'   => 'Address',
+    'label-confirm'   => 'Confirm Password',
+    'btn-register'    => 'Register',
+    // Reset Password Page
+    'title-reset-password' => 'Reset Password',
+    'btn-reset-password'   => 'Send Password Reset Link',
+    // NavBar
+    'link-close' => 'Logout',
 ];
+
 

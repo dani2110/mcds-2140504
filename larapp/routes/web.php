@@ -15,31 +15,26 @@ use Carbon\Carbon;
 */
 
 
-Route::get('locale/{locale}', function ($locale){
-    Session::put('locale', $locale);
-    return redirect()->back();
-});
-
 
 Route::get('/', function () {
     return view('welcome');
   });
 
 
-Route::get('helloworld', function () {
+/*Route::get('helloworld', function () {
 	return "<h1>Hello World</h1>";
-});
+});*/
 
-Route::get('users', function () {
+/*Route::get('users', function () {
       	dd(App\User::all());
-});
+});*/
 
-Route::get('user/{id}', function ($id){
+/*Route::get('user/{id}', function ($id){
       	dd(App\User::findOrFail($id));
-});
+});*/
 
 
-Route::get('ages', function () {
+/*Route::get('ages', function () {
 	$users = App\User::all()->take(10);
 	foreach ($users as $user)
 	{
@@ -49,10 +44,10 @@ Route::get('ages', function () {
 		$tiempo = $tiempoTranscurridoCreacion->diffForHumans();
 		echo($user->fullname.' tiene '.$edad.' años,'.' usuario creado '.$tiempo);
 	}
-});
+});*/
 
 
-Route::get('challenge', function () {
+/*Route::get('challenge', function () {
 
 	foreach (App\User::all()->take(10) as $user) {
 		$years = Carbon::createFromDate($user->birthdate)->diff()->format('%y years old');
@@ -60,7 +55,7 @@ Route::get('challenge', function () {
 		$rs[] = $user->fullname." - ".$years." - created ".$since->diffForHumans();
 	}
 	return view('challenge', ['rs' => $rs]);
-});
+});*/
 
 Route::get('example', function () {
 	$games      = App\Game::all()->take(2);
@@ -74,5 +69,15 @@ Route::get('example', function () {
 
 
 Auth::routes();
+
+// Resources
+Route::resources([
+    'users'         => 'UserController',
+    //'categories'  => 'CategoryController',
+    //'games'       => 'GameController',
+]);
+
+// Middleware
+Route::get('locale/{locale}', 'LocaleController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
