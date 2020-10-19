@@ -7,14 +7,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
 // Custom
+@import 'custom';
 
-body {
-	
-	background-color: $blue;
-	.card-header {
-	   background-color: $indigo;
-
-	}
-}

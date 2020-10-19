@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +12,11 @@
 			<div class="col-md-8 offset-md-2">
 				<table class="table table-striped table-hover table-dark">
 					@foreach ($rs as $r)
-					<tr>
-						<td>
-							{{ $r }}
-						</td>
-					</tr>
+						<tr>
+							<td>
+								{{ $r }}
+							</td>
+						</tr>
 					@endforeach
 				</table>
 			</div>

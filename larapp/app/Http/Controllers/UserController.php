@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -20,7 +21,8 @@ class UserController extends Controller
      */
      public function index()
     {
-        $users = User::all();
+        //$users = User::all();
+        $users = User:: paginate(10);
         return view('users.index')->with('users', $users);
     }
     /**
@@ -30,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -39,9 +41,12 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        dd($request->all());
+        $user = new User;
+        $user -> fullname = $request->fullname;
+
     }
 
     /**
