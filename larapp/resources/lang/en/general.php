@@ -29,4 +29,7 @@ return [
     'link-close'     => 'Logout',
     // Dashboard
     'title-dashboard' => 'Dashboard',
+    // Category
+    'label-name'        =>'Name',
+    'label-description' =>'Description',
 ];

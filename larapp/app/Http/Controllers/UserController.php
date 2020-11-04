@@ -88,7 +88,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('users.edit')->with('user', $user);
     }
 
     /**
@@ -99,10 +99,24 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
-    {
-        //
-    }
+   {
+        //dd($request->all());
+        $user->fullname  = $request->fullname;
+        $user->email     = $request->email;
+        $user->phone     = $request->phone;
+        $user->birthdate = $request->birthdate;
+        $user->gender    = $request->gender;
+        $user->address   = $request->address;
+        if ($request->hasFile('photo')) {
+            $file = time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('imgs'), $file);
+            $user->photo = 'imgs/'.$file;
+        }
 
+        if($user->save()) {
+            return redirect('users')->with('message', 'El Usuario: '.$user->fullname.' fue Modificado con Exito!');
+        } 
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -111,6 +125,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        if($user->delete()) { return redirect('users')->with('message', 'El Usuario: '.$user->fullname.' fue Eliminado con Exito!'); 
     }
+  }
 }

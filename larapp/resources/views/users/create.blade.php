@@ -100,19 +100,22 @@
         </div>
 
         <div class="form-group">
+
+            <div class="text-center my-3"> <img src="{{ asset('imgs/no-photo.png') }}" class="img-thumbnail" id="preview" width="120px"> 
+            </div>
+
             <div class="custom-file">
              <input type="file" class="custom-file-input @error('photo') is-invalid @enderror" id="photo" name="photo" accept="image/*">
              <label class="custom-file-label" for="customFile"> 
                 <i class="fa fa-upload"></i> 
                 Foto
             </label>
+            @error('photo')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
-
-        @error('photo')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
     </div>
 
     <div class="form-group">
