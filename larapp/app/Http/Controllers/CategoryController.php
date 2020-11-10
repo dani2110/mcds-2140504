@@ -41,12 +41,12 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         
           //dd($request->all());
         $category = new Category;
-        $category->name  = $request->name;
+        $category->name            = $request->name;
         $category->description     = $request->description;
 
         if ($request->hasFile('image')) {
@@ -93,7 +93,7 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
       
         //dd($request->all());

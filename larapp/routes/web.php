@@ -67,6 +67,9 @@ Route::get('example', function () {
 	            ->with('users', $users);
 });
 
+// Exports PDF
+Route::get('generate/pdf/users', 'UserController@pdf');
+
 
 Auth::routes();
 
@@ -74,7 +77,7 @@ Auth::routes();
 Route::resources([
     'users'         => 'UserController',
     'categories'  => 'CategoryController',
-    //'games'       => 'GameController',
+    'games'       => 'GameController',
 ]);
 
 // Middleware

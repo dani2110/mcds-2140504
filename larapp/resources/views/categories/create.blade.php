@@ -20,7 +20,7 @@
             </li>
             <li class="breadcrumb-item">
                 <a href="{{ route('categories.index') }}">
-                    <i class="fa fa-address-card"></i> 
+                    <i class="fa fa-list-alt"></i> 
                     Módulo Categorias
                 </a>
             </li>
@@ -47,7 +47,7 @@
 
         <div class="form-group">
 
-            <div class="text-center my-3"> <img src="{{ asset('imgs/no-phot.png') }}" class="img-thumbnail" id="preview" width="120px"> 
+            <div class="text-center my-3"> <img src="{{ asset('imgs/no-category.png') }}" class="img-thumbnail" id="preview" width="120px"> 
             </div>
 
             <div class="custom-file">
@@ -56,7 +56,7 @@
                 <i class="fa fa-upload"></i> 
                 Foto
             </label>
-            @error('photo')
+            @error('image')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>

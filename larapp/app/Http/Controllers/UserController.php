@@ -98,7 +98,7 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserRequest $request, User $user)
    {
         //dd($request->all());
         $user->fullname  = $request->fullname;
@@ -128,4 +128,12 @@ class UserController extends Controller
         if($user->delete()) { return redirect('users')->with('message', 'El Usuario: '.$user->fullname.' fue Eliminado con Exito!'); 
     }
   }
+   
+   public function pdf() {
+        $users = User::all();
+        $pdf = \PDF::loadView('users.pdf', compact('users'));
+        return $pdf->download('allusers.pdf');
+    }
+
+
 }

@@ -4,7 +4,7 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-10 offset-md-1">
-			<h1> <i class="fa fa-address-card"></i> Lista de Categorias</h1>
+			<h1> <i class="fa fa-list-alt"></i> Lista de Categorias</h1>
 			<hr>
 			<a href="{{ url('categories/create') }}" class="btn btn-success"> 
 				<i class="fa fa-plus"></i>

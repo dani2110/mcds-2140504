@@ -19,7 +19,7 @@
                 </li>
                 <li class="breadcrumb-item">
                     <a href="{{ route('categories.index') }}">
-                        <i class="fa fa-address-card"></i>  
+                        <i class="fa fa-list-alt"></i>  
                          Módulo Categorias
                     </a>
                 </li>
