@@ -17,7 +17,7 @@
 @empty
 <tr>
     <td class="text-center" colspan="5">
-        No hay usuarios con este nombre o correo electrónico.
+        No hay usuarios con este nombre/correo electrónico.
     </td>
 </tr>
 @endforelse

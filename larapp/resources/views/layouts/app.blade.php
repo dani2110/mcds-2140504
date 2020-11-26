@@ -51,6 +51,19 @@
                 confirmButtonText: 'Aceptar'
             });
             @endif
+            
+            //
+           @if (session('error'))
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'error',
+                  title: 'Acceso Denegado',
+                  text: '{{ session('error') }}',
+                  showConfirmButton: false,
+                  timer: 2500
+                });
+            @endif
+
             //
             $('.btn-delete').click(function(event) {
                 Swal.fire({
@@ -68,7 +81,8 @@
                     }
                 });
             });
-            //
+
+          //
             $('#photo').change(function(event) {
                 let reader = new FileReader();
                 reader.onload = function(event) {
@@ -76,8 +90,8 @@
                 }
                 reader.readAsDataURL(this.files[0]);
             });
+
             //
-             //
             $('#image').change(function(event) {
                 let reader = new FileReader();
                 reader.onload = function(event) {
@@ -85,16 +99,16 @@
                 }
                 reader.readAsDataURL(this.files[0]);
             });
+
             //
-            //
-                $('.btn-excel').click(function(event) {
+            $('.btn-excel').click(function(event) {
                 $('#file').click();
             });
             $('#file').change(function(event) {
                 $(this).parent().submit();
             });
             //
-             
+
             $('body').on('keyup','#qsearch', function(event){
                 event.preventDefault();
                 $q = $(this).val();

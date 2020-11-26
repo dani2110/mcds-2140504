@@ -81,12 +81,16 @@ Route::post('users/search', 'UserController@search');
 
 Auth::routes();
 
-// Resources
-Route::resources([
-    'users'         => 'UserController',
-    'categories'  => 'CategoryController',
-    'games'       => 'GameController',
-]);
+// Group Middleware
+Route::group(['middleware' => 'admin'], function() {
+	
+    // Resources
+    Route::resources([
+        'users'       => 'UserController',
+        'categories'  => 'CategoryController',
+        'games'       => 'GameController',
+    ]);
+});
 
 // Middleware
 Route::get('locale/{locale}', 'LocaleController@index');
