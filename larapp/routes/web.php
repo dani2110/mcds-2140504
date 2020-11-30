@@ -69,14 +69,19 @@ Route::get('example', function () {
 
 // Export PDF
 Route::get('generate/pdf/users', 'UserController@pdf');
+Route::get('generate/pdf/games', 'GameController@pdf');
 
 // Export PDF
 Route::get('generate/excel/users', 'UserController@excel');
+Route::get('generate/excel/games', 'GameController@excel');
 // Import Excel
 Route::post('import/excel/users', 'UserController@import');
+Route::post('import/excel/games', 'GameController@import');
+
 
 // Search Scope
 Route::post('users/search', 'UserController@search');
+Route::post('games/search', 'GameController@search');
 
 
 Auth::routes();

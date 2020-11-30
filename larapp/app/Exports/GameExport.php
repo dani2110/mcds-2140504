@@ -2,19 +2,20 @@
 
 namespace App\Exports;
 
-use App\User;
+use App\Game;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\WithColumnWidths;
 use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
-class UserExport implements FromView, WithColumnWidths, WithStyles
+
+class GameExport implements FromView, WithColumnWidths, WithStyles
 {
     public function view(): View
     {
-        return view('users.excel', [
-            'users' => User::all()
+        return view('games.excel', [
+            'games' => Game::all()
         ]);
     }
 
@@ -22,10 +23,13 @@ class UserExport implements FromView, WithColumnWidths, WithStyles
     {
         return [
             'A' => 5,
-            'B' => 30,  
-            'C' => 35,            
-            'D' => 15,            
-            'E' => 24,            
+            'B' => 20,  
+            'C' => 40,            
+            'D' => 20,            
+            'E' => 10,
+            'F' => 10,
+            'G' => 10, 
+            'H' => 10,           
         ];
     }
 
