@@ -68,26 +68,37 @@
                         </li>
                     @endif
                 @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                       <img src="{{ asset(Auth::user()->photo) }}" class="img-thumbnail rounded-circle" width="40px">
-                       {{ Auth::user()->fullname }}
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img src="{{ asset(Auth::user()->photo) }}" class="img-thumbnail rounded-circle" width="40px">
+                            {{ Auth::user()->fullname }}
                         </a>
 
-                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url('users') }}">
-                                <i class="fa fa-users"></i>
-                                 Módulo Usuarios 
-                            </a>
-                            <a class="dropdown-item" href="{{ url('categories') }}">
-                                <i class="fas fa-list-alt"></i>
-                                 Módulo Categorías 
-                            </a>
-                            <a class="dropdown-item" href="{{ url('games') }}">
-                                <i class="fas fa-gamepad"></i>
-                                 Módulo Juegos 
-                            </a>
-                            <div class="dropdown-divider"></div>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            @if (Auth::user()->role == "Admin")
+                                <a class="dropdown-item" href="{{ url('users') }}">
+                                    <i class="fa fa-users"></i>
+                                     Módulo Usuarios 
+                                </a>
+                                <a class="dropdown-item" href="{{ url('categories') }}">
+                                    <i class="fas fa-list-alt"></i>
+                                     Módulo Categorías 
+                                </a>
+                                <a class="dropdown-item" href="{{ url('games') }}">
+                                    <i class="fas fa-gamepad"></i>
+                                     Módulo Juegos 
+                                </a>
+                                <div class="dropdown-divider"></div>
+                            @elseif(Auth::user()->role == "Editor")
+                                <a class="dropdown-item" href="{{ url('editor/info') }}">
+                                        <i class="fa fa-user"></i>
+                                         Mis Datos 
+                                </a>
+                                <a class="dropdown-item" href="{{ url('editor/games') }}">
+                                    <i class="fas fa-gamepad"></i>
+                                     Mis Juegos 
+                                </a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

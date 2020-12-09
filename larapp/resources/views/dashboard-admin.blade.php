@@ -6,11 +6,16 @@
         <div class="card">
             <img src="{{ asset('imgs/bg-dashboard.svg') }}" width="300px" class="my-2 img-top-card">
             <div class="card-header text-center">
-                <h4>
-                    <i class="fa fa-clipboard-list"></i>
-                    @lang('general.title-dashboard')
-                </h4>
-            </div>
+               <h4>
+                <i class="fa fa-clipboard-list"></i>
+                @lang('general.title-dashboard') 
+                | 
+                <small>
+                    <i class="fas fa-user-ninja"></i> Administrador
+                </small>
+            </h4>
+        </div>
+    </div>
 
             <div class="card-body row">
                 <div class="col-md-4 mt-5">
@@ -24,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                {{--  --}}
+
                 <div class="col-md-4 mt-5">
                     <div class="card">
                         <img src="{{ asset('imgs/bg-categories.svg') }}" width="240px" class="my-2 img-top-card" height="154px">
@@ -36,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                {{--  --}}
+
                 <div class="col-md-4 mt-5">
                     <div class="card">
                         <img src="{{ asset('imgs/bg-games.svg') }}" width="240px" class="my-2 img-top-card" height="154px">

@@ -161,4 +161,10 @@ public function search(Request $request) {
     return view('games.search')->with('games', $games);
 }
 
+  public function editorgames(User $user)
+    {
+        $games = Game::paginate(5);
+        return view('games.index')->with('games', $games);
+    }
+
 }

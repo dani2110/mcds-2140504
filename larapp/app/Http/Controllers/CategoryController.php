@@ -121,5 +121,5 @@ class CategoryController extends Controller
     {
        if($category->delete()) { return redirect('categories')->with('message', 'La Categoria: '.$category->name.' fue Eliminada con Exito!'); 
     }
-  }
+ 
 }

@@ -70,6 +70,8 @@
 					<td>
 						@if ($user->role == 'Admin')
 							<i class="fas fa-user-ninja"></i> Administrador
+						@elseif($user->role == 'Editor')
+							<i class="fas fa-user-edit"></i> Editor
 						@else
 							<i class="fas fa-user"></i> Cliente
 						@endif

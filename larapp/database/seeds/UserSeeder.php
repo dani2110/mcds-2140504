@@ -31,7 +31,8 @@ class UserSeeder extends Seeder
         $usr->birthdate  ='1976-02-12';
         $usr->gender     ='Male';
         $usr->address    ='Avd Siempre Viva';
-        $usr->password   =bcrypt('customer');
+        $usr->role       = 'Editor';
+        $usr->password   =bcrypt('editor');
         $usr->save();
 
         //Factory
