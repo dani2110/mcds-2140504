@@ -86,6 +86,8 @@ Route::post('import/excel/games', 'GameController@import');
 Route::post('users/search', 'UserController@search');
 Route::post('games/search', 'GameController@search');
 
+Route::post('home/search', 'HomeController@search');
+
 
 Auth::routes();
 

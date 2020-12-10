@@ -48,4 +48,16 @@ class HomeController extends Controller
         ->with('categories', $categories)
         ->with('games', $games);
     }
+
+    public function search(Request $request)
+    {
+         $categories = Category::names($request->q)->orderBy('id','ASC')->paginate(10);
+         $games = $category->games;
+         $games->each(function($games){
+            $games->category;
+            $games->image;
+    });   
+     
+     return view('category-search')->with('categories', $categories);
+    }
 }

@@ -24,7 +24,7 @@
             <hr>
         </div>
     </div>
-    <input type="hidden" id="tmodel" value="games">
+    <input type="hidden" id="tmodel" value="views">
         <input type="search" id="qsearch" name="qsearch" class="form-search" autocomplete="off" placeholder="Buscar">
         <br>
         <div class="loader d-none text-center mt-5">

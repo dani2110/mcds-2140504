@@ -18,7 +18,7 @@
 @empty
 <tr>
     <td class="text-center" colspan="5">
-        No hay juegos con este nombre.
+        No hay categorias con este nombre.
     </td>
 </tr>
 @endforelse
