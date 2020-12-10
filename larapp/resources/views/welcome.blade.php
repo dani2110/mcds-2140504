@@ -24,14 +24,14 @@
             <hr>
         </div>
     </div>
-    <input type="hidden" id="tmodel" value="views">
+    <input type="hidden" id="tmodel" value="categories">
         <input type="search" id="qsearch" name="qsearch" class="form-search" autocomplete="off" placeholder="Buscar">
         <br>
         <div class="loader d-none text-center mt-5">
             <img src="{{ asset('imgs/loader.gif')}}" width="100px">
         </div>
         <br><br>
-    <div class="row">
+        <div class="row">
         <div class="col-md-4 offset-md-4">
             <div class="form-group">
                 <select name="" id="" class="form-control">
@@ -42,9 +42,9 @@
                 </select>
             </div>
         </div>
-    </div>
+    </div> 
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="content">
         <div class="col-md-12">
             @foreach ($categories as $category)
                 <h3 class="mt-5"> <img src="{{ asset($category->image) }}" width="80px"> </h3>

@@ -17,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => 'welcome']);
+        $this->middleware('auth', ['except' => 'welcome','search']);
     }
 
     /**
@@ -49,15 +49,13 @@ class HomeController extends Controller
         ->with('games', $games);
     }
 
-    public function search(Request $request)
-    {
-         $categories = Category::names($request->q)->orderBy('id','ASC')->paginate(10);
-         $games = $category->games;
-         $games->each(function($games){
-            $games->category;
-            $games->image;
-    });   
-     
-     return view('category-search')->with('categories', $categories);
+    public function search(Request $request){
+    $categories   = Category::names($request->q)->orderBy('id','ASC')->paginate(2); 
+    $categories   = Category::all();
+    $games        = Game::all();
+
+     return view('search')->with('categories', $categories)
+                          ->with('games', $games);
+
     }
-}
+} 

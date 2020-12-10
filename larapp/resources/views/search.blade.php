@@ -10,7 +10,7 @@
 @empty
 <tr>
     <td class="text-center" colspan="5">
-        No hay categorias con este nombre.
+        No hay juegos en esta categoria.
     </td>
 </tr>
 @endforelse
